@@ -2,9 +2,13 @@
 
 Specs:
 - [x] Use Angular to build the app
+- [ ] Must contain at least 5 views
+    landing, home, flights, driving, notes
 - [ ] Must contain some sort of nested views
 - [ ] Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due
+    Filter by upcoming trips
 - [ ] Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
+    Dynamic update of trip date
 - [ ] Links should work correctly. Ex: Clicking on a product in a list, should take you to the show page for that product
 - [ ] Data should be validated in Angular before submission
 - [ ] Must talk to the Rails backend using $http and Services
