@@ -32,7 +32,7 @@ module Api
       private
 
       def trip_params
-        params.require(:trip).permit(:name)
+        params.require(:trip).permit(:name, :depart_date, :return_date)
       end
     end
   end
