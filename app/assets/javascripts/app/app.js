@@ -25,7 +25,12 @@ angular
       .state('home.trip', {
         url:'trip/:id',
         templateUrl: 'trips/show.html',
-        controller: 'TripController as trip'
+        controller: 'TripController as trip',
+        resolve: {
+          trip: function($stateParams, TripService) {
+            return TripService.getTripById($stateParams.id);
+          }
+        }
       })
       .state('home.edit', {
         url:'trip/:id/edit',
