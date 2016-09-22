@@ -1,5 +1,6 @@
-function TripsController($scope) {
-
+function TripsController(trips) {
+  ctrl = this;
+  ctrl.trips = trips.data;
 }
 
 angular

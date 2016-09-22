@@ -9,8 +9,13 @@ angular
       })
       .state ('home.trips', {
         url: 'trips',
-        templateUrl: 'trips/index.html',
-        controller: 'TripsController as trips'
+        templateUrl: 'trips/trips.html',
+        controller: 'TripsController as trips',
+        resolve: {
+          trips: function(TripService) {
+            return TripService.getTrips();
+          }
+        }
       })
       .state('home.new', {
         url:'trip/new',
