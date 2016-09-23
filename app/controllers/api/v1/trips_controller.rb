@@ -1,7 +1,6 @@
 module Api
   module V1
     class TripsController < ApplicationController
-      respond_to :json
 
       def index
         respond_with(Trip.all.order("id ASC"))
