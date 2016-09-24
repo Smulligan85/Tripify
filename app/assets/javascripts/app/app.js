@@ -7,6 +7,11 @@ angular
         templateUrl: 'home.html',
         controller: 'HomeController as home'
       })
+      .state('home.landing', {
+        url: 'landing',
+        templateUrl: 'trips/landing.html',
+        controller: 'LandingController as landing'
+      })
       .state ('home.trips', {
         url: 'trips',
         templateUrl: 'trips/trips.html',

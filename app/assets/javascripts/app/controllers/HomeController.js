@@ -1,4 +1,4 @@
-function HomeController($scope) {
+function HomeController() {
 
 }
 angular
