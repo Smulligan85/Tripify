@@ -2,9 +2,8 @@
 
 Specs:
 - [x] Use Angular to build the app
-- [ ] Must contain at least 5 views
-    landing, home, flights, driving, notes
-- [ ] Must contain some sort of nested views
+- [x] Must contain at least 5 views
+- [x] Must contain some sort of nested views
 - [ ] Must contain some sort of searching as well as filtering based on some criteria. Ex: All items in the "fruit" category, or all tasks past due
     Filter by upcoming trips
 - [ ] Must contain at least one page that allows for dynamic updating of a single field of a resource. Ex: Allow changing of quantity in a shopping cart
