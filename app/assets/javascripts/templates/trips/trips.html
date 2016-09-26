@@ -1,9 +1,4 @@
-<h1>Trips Index Page</h1>
-
+<h1>Your Trips</h1>
 <div ng-repeat="trip in trips.trips">
-  <ul>
-    <li>{{ trip.name }}</li>
-    <li>{{ trip.depart_date }}</li>
-    <li>{{ trip.return_date }}</li>
-  </ul>
+  <a href="#" ui-sref="home.trip({id: trip.id})">{{trip.name}}</a>
 </div>
