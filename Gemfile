@@ -18,6 +18,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'bower-rails'
 gem 'responders'
 gem 'angular-rails-templates'
+gem 'angular-ui-bootstrap-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
