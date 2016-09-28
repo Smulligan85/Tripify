@@ -13,7 +13,7 @@ function TripService($http) {
   };
 
   this.editTrip = function(id, updatedTripData) {
-    return $http.put('api/v1/trips' +id+ '.json', updatedTripData);
+    return $http.put('api/v1/trips/' +id+ '.json', updatedTripData);
   };
 
   this.deleteTrip = function(id) {

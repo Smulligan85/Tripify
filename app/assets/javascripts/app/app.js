@@ -12,7 +12,7 @@ angular
         templateUrl: 'trips/landing.html',
         controller: 'LandingController as landing'
       })
-      .state ('home.trips', {
+      .state('home.trips', {
         url: 'trips',
         templateUrl: 'trips/trips.html',
         controller: 'TripsController as trips',
@@ -40,7 +40,12 @@ angular
       .state('home.edit', {
         url:'trip/:id/edit',
         templateUrl: 'trips/edit.html',
-        controller: 'EditTripController as editTrip'
+        controller: 'EditTripController as editTrip', 
+        resolve: {
+          trip: function($stateParams, TripService) {
+            return TripService.getTripById($stateParams.id);
+          }
+        }
       });
       $urlRouterProvider.otherwise('/');
   });
