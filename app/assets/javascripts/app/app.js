@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'ngResource', 'templates', 'ui.bootstrap'])
+  .module('app', ['ui.router', 'ngResource', 'ngMessages', 'templates', 'ui.bootstrap'])
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
@@ -25,7 +25,7 @@ angular
       .state('home.new', {
         url:'trip/new',
         templateUrl: 'trips/new.html',
-        controller: 'NewTripController as trip'
+        controller: 'NewTripController as newTrip'
       })
       .state('home.trip', {
         url:'trip/:id',
