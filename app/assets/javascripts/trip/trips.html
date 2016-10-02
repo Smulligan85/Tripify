@@ -1,0 +1,7 @@
+<h1>Your Trips</h1>
+
+<tabs>
+  <pane ng-repeat="trip in vm.trips | orderBy:'name'" title="{{trip.name}}">
+    <individual-trip parent-controller="vm" trip="trip"></individual-trip>
+  </pane>
+</tabs>

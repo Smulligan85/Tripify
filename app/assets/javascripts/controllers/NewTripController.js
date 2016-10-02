@@ -3,13 +3,8 @@ function NewTripController($state, TripService) {
   ctrl.trip = {};
 
   ctrl.postTrip = function() {
-    TripService.newTrip(ctrl.trip).then(function(trip) {
-    if(trip.data.size) {
-      ctrl.error = trip.data.size[0];
-    } else {
-      $state.go('home.trips');
-    }
-  });
+    TripService.newTrip(ctrl.trip);
+    $state.go('home.trips');
   };
 }
 

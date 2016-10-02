@@ -5,8 +5,7 @@
       "angular": "v1.5.3",
       "angular-ui-router": "latest",
       "angular-resource": "v1.5.3",
-      "angular-messages": "v1.5.3"
-    }
+      "angular-messages": "v1.5.3"    }
   },
   "vendor": {
     "name": "bower-rails generated vendor assets",
