@@ -10,7 +10,7 @@ angular
       .state('home.landing', {
         url: 'landing',
         templateUrl: 'landing/landing.html',
-        // controller: 'LandingController as landing'
+        controller: 'LandingController as vm'
       })
       .state('home.trips', {
         url: 'trips',
@@ -31,21 +31,11 @@ angular
         url:'trip/:id',
         templateUrl: 'trip/show.html',
         controller: 'TripController as vm',
-        // resolve: {
-        //   trip: function($stateParams, TripService) {
-        //     return TripService.getTripById($stateParams.id);
-        //   }
-        // }
       })
       .state('home.edit', {
         url:'trip/:id/edit',
         templateUrl: 'trip/edit.html',
         controller: 'TripController as vm',
-        // resolve: {
-        //   trip: function($stateParams, TripService) {
-        //     return TripService.getTripById($stateParams.id);
-        //   }
-        // }
       });
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/landing');
   });

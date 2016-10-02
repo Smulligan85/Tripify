@@ -9,7 +9,7 @@
       trip: '=',
       parentController: '='
     }
-  }
+  };
 
   function IndividualTripController(TripService) {
     var ctrl = this;
@@ -29,7 +29,7 @@
 
     function updateTrip() {
       return TripService.editTrip(ctrl.editableTrip.id, ctrl.editableTrip)
-                 .then(ctrl.parentController.getTrips)
+                 .then(ctrl.parentController.getTrips);
     }
 
   }

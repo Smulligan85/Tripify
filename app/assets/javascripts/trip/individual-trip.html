@@ -1,13 +1,19 @@
 <div ng-if="$ctrl.readMode">
-  <h1 ng-bind="$ctrl.trip.name"></h1>
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+      <h2>{{$ctrl.trip.name}}</h2>
+      <p>Departing: {{$ctrl.trip.depart_date | date: 'MM/dd/yyyy'}}</p>
+      <p>Returing: {{$ctrl.trip.return_date | date: 'MM/dd/yyyy'}}</p>
+      <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button>
 
-  <p ng-bind="$ctrl.trip.depart_date"></p>
-  <p ng-bind="$ctrl.trip.return_name"></p>
-  <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button>
+    </div>
 </div>
 
 <div ng-if="$ctrl.editMode">
-  <form class="container" name="form" novalidate ng-submit="$ctrl.updateTrip()">
+    <div class="col-md-6"></div>
+    <div class="col-md-6">
+    <h2>Edit Your Trip</h2>
+  <form  name="form" novalidate ng-submit="$ctrl.updateTrip()">
     <div class="form-group">
     <label for="name">Name:</label>
     <input class="form-control" type="text" name="tripName" placeholder="{{$ctrl.trip.name}}" ng-model="$ctrl.trip.name" required ><br>
@@ -34,4 +40,5 @@
 
     <input class="btn btn-primary" type="submit" value="Update Trip">
   </form>
+    </div>
 </div>

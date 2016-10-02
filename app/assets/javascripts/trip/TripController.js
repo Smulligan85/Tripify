@@ -11,7 +11,7 @@ function TripController(trips, TripService) {
 
   function getTrips() {
     return TripService.getTrips()
-               .then(setTrips)
+               .then(setTrips);
 
     function setTrips(tripData) {
         vm.trips = tripData.data;

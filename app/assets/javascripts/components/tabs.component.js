@@ -6,7 +6,7 @@
         transclude: true,
         controller: tabsController,
         templateUrl: 'components/tabs.html'
-    }
+    };
 
     function tabsController() {
         var panes = this.panes = [];
