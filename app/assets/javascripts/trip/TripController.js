@@ -4,7 +4,6 @@ function TripController(trips, TripService) {
   var vm = this;
 
   // callable attributes on the vm
-  // vm.trip = trip.data;
   vm.trips = trips.data;
   vm.getTrips = getTrips;
 
