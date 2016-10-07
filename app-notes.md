@@ -2,6 +2,8 @@ Trip:
 
   Attributes:
     -- Name
+    -- Depart_date
+    -- Return_date
     -- Flight PDF
 
   Associations
