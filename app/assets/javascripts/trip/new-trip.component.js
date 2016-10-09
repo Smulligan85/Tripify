@@ -7,10 +7,11 @@
     controller: NewTripController,
   };
 
-  function NewTripController($state, TripService) {
+  function NewTripController(TripService) {
     var ctrl = this;
+    ctrl.postTrip = postTrip;
 
-    function postNewTrip() {
+    function postTrip() {
       return TripService.newTrip(ctrl.trip)
                  .success(function() {
                    document.location.reload(true);

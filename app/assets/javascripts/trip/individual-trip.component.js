@@ -30,7 +30,6 @@
       return TripService.editTrip(ctrl.editableTrip.id, ctrl.editableTrip)
                  .success(function() {
                    document.location.reload(true);
-                   // ctrl.parentController.getTrips();
                  });
 
     }
