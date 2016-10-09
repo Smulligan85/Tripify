@@ -9,7 +9,7 @@
       <div ng-repeat="note in $ctrl.trip.notes | filter:noteSearch">
         <p>{{ note.name }} -- {{ note.body }}</p><br>
       </div>
-      <button class="btn btn-primary" ng-click="$ctrl.noteMode()">Add A Note</button><br>
+      <button class="btn btn-primary" ng-click="$ctrl.startNoteMode()">Add A Note</button><br>
       <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button><br>
       <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button><br>
 
@@ -18,13 +18,16 @@
 
 <div ng-if="$ctrl.noteMode">
   <h2>Add A Note</h2>
-  <div class="form-group">
-    <label for="note">Note Title:</label>
-    <input class="form-control" type="text" name="noteTitle" ng-model="$ctrl.trip.noteTitle" ><br>
-    <label for="note">Note Body:</label>
-    <input class="form-control" type="text" name="noteBody" ng-model="$ctrl.trip.noteBody" ><br>
-  </div>
+    <form name="noteForm" novalidate ng-submit="$ctrl.addNote()">
+      <div class="form-group">
+        <label for="note">Note Title:</label>
+        <input class="form-control" type="text" name="noteTitle" ng-model="$ctrl.trip.noteTitle" ><br>
+        <label for="note">Note Body:</label>
+        <input class="form-control" type="text" name="noteBody" ng-model="$ctrl.trip.noteBody" ><br>
+        <input class="btn btn-primary" type="submit" value="Add Note">
 
+      </div>
+    </form>
 </div>
 
 <div ng-if="$ctrl.editMode">

@@ -17,14 +17,20 @@
 
     ctrl.readMode = true;
     ctrl.editMode = false;
+    ctrl.noteMode = false;
     ctrl.editableTrip = ctrl.trip;
     ctrl.startEditMode = startEditMode;
+    ctrl.startNoteMode = startNoteMode;
     ctrl.updateTrip = updateTrip;
     ctrl.destroyTrip = destroyTrip;
 
     function startEditMode() {
       ctrl.readMode = false;
       ctrl.editMode = true;
+    }
+
+    function startNoteMode() {
+      ctrl.noteMode = true;
     }
 
     function updateTrip() {
