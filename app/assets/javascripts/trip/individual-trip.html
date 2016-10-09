@@ -2,8 +2,12 @@
     <div class="col-md-6"></div>
     <div class="col-md-6">
       <h2>{{$ctrl.trip.name}}</h2>
-      <p>Departing: {{$ctrl.trip.depart_date | date: 'MM/dd/yyyy'}}</p>
-      <p>Returing: {{$ctrl.trip.return_date | date: 'MM/dd/yyyy'}}</p>
+      <p>Departing: {{ $ctrl.trip.depart_date | date: 'MM/dd/yyyy' }}</p>
+      <p>Returning: {{ $ctrl.trip.return_date | date: 'MM/dd/yyyy' }}</p>
+      <h3>Notes</h3>
+      <div ng-repeat="note in $ctrl.trip.notes">
+        <p>{{ note.name }} -- {{ note.body }}</p>
+      </div>
       <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button>
       <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button>
 
