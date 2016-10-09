@@ -5,13 +5,26 @@
       <p>Departing: {{ $ctrl.trip.depart_date | date: 'MM/dd/yyyy' }}</p>
       <p>Returning: {{ $ctrl.trip.return_date | date: 'MM/dd/yyyy' }}</p>
       <h3>Notes</h3>
-      <div ng-repeat="note in $ctrl.trip.notes">
-        <p>{{ note.name }} -- {{ note.body }}</p>
+      <input type="text" ng-model="noteSearch"/><br>
+      <div ng-repeat="note in $ctrl.trip.notes | filter:noteSearch">
+        <p>{{ note.name }} -- {{ note.body }}</p><br>
       </div>
-      <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button>
-      <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button>
+      <button class="btn btn-primary" ng-click="$ctrl.noteMode()">Add A Note</button><br>
+      <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button><br>
+      <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button><br>
 
     </div>
+</div>
+
+<div ng-if="$ctrl.noteMode">
+  <h2>Add A Note</h2>
+  <div class="form-group">
+    <label for="note">Note Title:</label>
+    <input class="form-control" type="text" name="noteTitle" ng-model="$ctrl.trip.noteTitle" ><br>
+    <label for="note">Note Body:</label>
+    <input class="form-control" type="text" name="noteBody" ng-model="$ctrl.trip.noteBody" ><br>
+  </div>
+
 </div>
 
 <div ng-if="$ctrl.editMode">

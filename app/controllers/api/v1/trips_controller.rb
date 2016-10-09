@@ -11,16 +11,16 @@ module Api
       end
 
       def create
-        @trip = Trip.new(trip_params)
-        if @trip.save
-          render :json => @trip
+        trip = Trip.new(trip_params)
+        if trip.save
+          render :json => trip
         end
       end
 
       def update
-        @trip = Trip.find(params[:id])
-        if @trip.update(trip_params)
-          render :json => @trip
+        trip = Trip.find(params[:id])
+        if trip.update(trip_params)
+          render :json => trip
         end
       end
 

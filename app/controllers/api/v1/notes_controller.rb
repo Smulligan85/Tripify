@@ -11,16 +11,17 @@ module Api
       end
 
       def create
-        @note = Note.new(note_params)
-        if @note.save
-          render :json => @note
+        trip = Trip.find(params[:id])
+        note = trip.notes.creaete(note_params)
+        if note.save
+          respond_with(trip, note)
         end
       end
 
       def update
-        @note = Note.find(params[:id])
-        if @note.update(note_params)
-          render :json => @note
+        note = Note.find(params[:id])
+        if note.update(note_params)
+          render :json => note
         end
       end
 
