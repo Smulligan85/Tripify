@@ -17,11 +17,12 @@
 
     ctrl.readMode = true;
     ctrl.editMode = false;
+    ctrl.editableTrip = ctrl.trip;
     ctrl.startEditMode = startEditMode;
     ctrl.updateTrip = updateTrip;
+    ctrl.destroyTrip = destroyTrip;
 
     function startEditMode() {
-      ctrl.editableTrip = ctrl.trip;
       ctrl.readMode = false;
       ctrl.editMode = true;
     }
@@ -32,6 +33,13 @@
                    document.location.reload(true);
                  });
 
+    }
+
+    function destroyTrip() {
+      return TripService.deleteTrip(ctrl.editableTrip.id)
+            .success(function() {
+              document.location.reload(true);
+            });
     }
   }
   angular

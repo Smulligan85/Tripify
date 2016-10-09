@@ -25,7 +25,7 @@ module Api
       end
 
       def destroy
-        respond_with(Trip.find(params[:id]))
+        respond_with(Trip.destroy(params[:id]))
       end
 
       private

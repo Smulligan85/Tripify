@@ -17,7 +17,7 @@ function TripService($http) {
   };
 
   this.deleteTrip = function(id) {
-    return $http.delete('api/v1/trips' +id+ '.json');
+    return $http.delete('api/v1/trips/' +id+ '.json');
   };
 }
 

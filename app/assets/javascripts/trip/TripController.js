@@ -1,4 +1,4 @@
-function TripController($state, trips, TripService) {
+function TripController(trips) {
 
   // set this to vm
   var vm = this;

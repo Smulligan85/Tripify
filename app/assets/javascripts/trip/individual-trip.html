@@ -5,6 +5,7 @@
       <p>Departing: {{$ctrl.trip.depart_date | date: 'MM/dd/yyyy'}}</p>
       <p>Returing: {{$ctrl.trip.return_date | date: 'MM/dd/yyyy'}}</p>
       <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button>
+      <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button>
 
     </div>
 </div>
