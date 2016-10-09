@@ -11,10 +11,10 @@ module Api
       end
 
       def create
-        trip = Trip.find(params[:id])
-        note = trip.notes.creaete(note_params)
+        trip = Trip.find(params[:trip_id])
+        note = trip.notes.create(note_params)
         if note.save
-          respond_with(trip, note)
+          render :json => note
         end
       end
 
@@ -32,7 +32,7 @@ module Api
       private
 
       def note_params
-        params.require(:note).permit(:name, :body, :trip_id)
+        params.require(:note).permit(:name, :body)
       end
     end
   end

@@ -11,7 +11,7 @@
     }
   };
 
-  function IndividualTripController($state, TripService) {
+  function IndividualTripController($state, TripService, NoteService) {
     var ctrl = this;
 
 
@@ -22,7 +22,9 @@
     ctrl.startEditMode = startEditMode;
     ctrl.startNoteMode = startNoteMode;
     ctrl.updateTrip = updateTrip;
+    ctrl.addNote = addNote;
     ctrl.destroyTrip = destroyTrip;
+    ctrl.noteData = {};
 
     function startEditMode() {
       ctrl.readMode = false;
@@ -39,6 +41,15 @@
                    document.location.reload(true);
                  });
 
+    }
+
+    function addNote() {
+      ctrl.noteData.name = ctrl.trip.noteTitle;
+      ctrl.noteData.body = ctrl.trip.noteBody;
+      return NoteService.newNote(ctrl.editableTrip.id, ctrl.noteData)
+              .success(function() {
+                document.location.reload(true);
+              });
     }
 
     function destroyTrip() {
