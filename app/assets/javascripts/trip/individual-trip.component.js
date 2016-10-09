@@ -11,7 +11,7 @@
     }
   };
 
-  function IndividualTripController(TripService) {
+  function IndividualTripController($state, TripService) {
     var ctrl = this;
 
 
@@ -29,7 +29,8 @@
     function updateTrip() {
       return TripService.editTrip(ctrl.editableTrip.id, ctrl.editableTrip)
                  .success(function() {
-                   ctrl.parentController.getTrips();
+                   document.location.reload(true);
+                   // ctrl.parentController.getTrips();
                  });
 
     }

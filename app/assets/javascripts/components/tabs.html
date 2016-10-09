@@ -1,8 +1,7 @@
-
-<div class="ui top attached tabular menu">
-  <div class="item" ng-repeat="pane in $ctrl.panes" ng-class="{active:pane.selected}">
+<div>
+  <div ng-repeat="pane in $ctrl.panes" ng-class="{active:pane.selected}">
     <a href="" ng-click="$ctrl.select(pane)">{{pane.title}}</a>
 </div>
 </div>
 
-<div class="ui bottom attached active tab segment" ng-transclude></div>
+<div ng-transclude></div>
