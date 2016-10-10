@@ -7,9 +7,11 @@
     controller: NewTripController,
   };
 
-  function NewTripController(TripService) {
+  function NewTripController($state, TripService) {
     var ctrl = this;
     ctrl.postTrip = postTrip;
+    ctrl.newMode = true;
+    ctrl.closeNewForm = closeNewForm;
 
     function postTrip() {
       return TripService.newTrip(ctrl.trip)
@@ -17,6 +19,11 @@
                    document.location.reload(true);
                  });
 
+    }
+
+    function closeNewForm() {
+      document.location.reload(true);
+      ctrl.newMode = false;
     }
   }
   angular

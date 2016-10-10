@@ -20,7 +20,9 @@
     ctrl.noteMode = false;
     ctrl.editableTrip = ctrl.trip;
     ctrl.startEditMode = startEditMode;
+    ctrl.closeEditMode = closeEditMode;
     ctrl.startNoteMode = startNoteMode;
+    ctrl.closeNoteMode = closeNoteMode;
     ctrl.updateTrip = updateTrip;
     ctrl.addNote = addNote;
     ctrl.destroyTrip = destroyTrip;
@@ -31,8 +33,17 @@
       ctrl.editMode = true;
     }
 
+    function closeEditMode() {
+      document.location.reload(true);
+      ctrl.editMode = false;
+    }
+
     function startNoteMode() {
       ctrl.noteMode = true;
+    }
+
+    function closeNoteMode() {
+      ctrl.noteMode = false;
     }
 
     function updateTrip() {

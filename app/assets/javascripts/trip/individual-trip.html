@@ -19,6 +19,7 @@
 
 <div ng-if="$ctrl.noteMode">
   <h2>Add A Note</h2>
+  <button class="btn btn-danger" ng-click="$ctrl.closeNoteMode()">Close Note Form</button>
     <form name="noteForm" novalidate ng-submit="$ctrl.addNote()">
       <div class="form-group">
         <label for="note">Note Title:</label>
@@ -39,6 +40,7 @@
 
 <div ng-if="$ctrl.editMode">
   <h2>Edit Your Trip</h2>
+  <button class="btn btn-danger" ng-click="$ctrl.closeEditMode()">Close Edit Form</button>
   <form  name="form" novalidate ng-submit="$ctrl.updateTrip()">
     <div class="form-group">
     <label for="name">Name:</label>
