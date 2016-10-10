@@ -1,17 +1,18 @@
 <div ng-if="$ctrl.readMode">
-    <div class="col-md-6"></div>
     <div class="col-md-6">
       <h2>{{$ctrl.trip.name}}</h2>
       <p>Departing: {{ $ctrl.trip.depart_date | date: 'MM/dd/yyyy' }}</p>
       <p>Returning: {{ $ctrl.trip.return_date | date: 'MM/dd/yyyy' }}</p>
+      <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip      </button>
+      <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button><br>
+    </div>
+    <div class="col-md-6">
       <h3>Notes</h3>
-      <input type="text" ng-model="noteSearch"/><br>
+      <input class="form-control" type="text" ng-model="noteSearch" placeholder="Search for notes"/><br>
+      <button class="btn btn-primary" ng-click="$ctrl.startNoteMode()">Add A Note</button><br>
       <div ng-repeat="note in $ctrl.trip.notes | filter:noteSearch">
         <p>{{ note.name }} -- {{ note.body }}</p><br>
       </div>
-      <button class="btn btn-primary" ng-click="$ctrl.startNoteMode()">Add A Note</button><br>
-      <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip</button><br>
-      <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button><br>
 
     </div>
 </div>
@@ -21,9 +22,15 @@
     <form name="noteForm" novalidate ng-submit="$ctrl.addNote()">
       <div class="form-group">
         <label for="note">Note Title:</label>
-        <input class="form-control" type="text" name="noteTitle" ng-model="$ctrl.trip.noteTitle" ><br>
+        <input class="form-control" type="text" name="noteTitle" ng-model="$ctrl.trip.noteTitle" required ><br>
+        <div ng-messages="noteForm.noteTitle.$error">
+          <div ng-message="required" ng-if="noteForm.$submitted">Note title is required.</div>
+        </div>
         <label for="note">Note Body:</label>
-        <input class="form-control" type="text" name="noteBody" ng-model="$ctrl.trip.noteBody" ><br>
+        <textarea class="form-control" type="area" name="noteBody" ng-model="$ctrl.trip.noteBody" required ></textarea><br>
+        <div ng-messages="noteForm.noteBody.$error">
+          <div ng-message="required" ng-if="noteForm.$submitted">Note body is required.</div>
+        </div>
         <input class="btn btn-primary" type="submit" value="Add Note">
 
       </div>
@@ -31,9 +38,7 @@
 </div>
 
 <div ng-if="$ctrl.editMode">
-    <div class="col-md-6"></div>
-    <div class="col-md-6">
-    <h2>Edit Your Trip</h2>
+  <h2>Edit Your Trip</h2>
   <form  name="form" novalidate ng-submit="$ctrl.updateTrip()">
     <div class="form-group">
     <label for="name">Name:</label>
