@@ -1,3 +1,6 @@
+(function() {
+  'use strict';
+
 function LandingController() {
 
 }
@@ -5,3 +8,4 @@ function LandingController() {
 angular
   .module('app')
   .controller('LandingController', LandingController);
+}());

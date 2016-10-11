@@ -1,3 +1,6 @@
+(function() {
+  'use strict';
+
 function TripController(trips) {
 
   // set this to vm
@@ -10,3 +13,4 @@ function TripController(trips) {
 angular
   .module('app')
   .controller('TripController', TripController);
+}());

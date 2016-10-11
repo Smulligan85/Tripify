@@ -11,7 +11,7 @@
     }
   };
 
-  function IndividualTripController($state, TripService, NoteService) {
+  function IndividualTripController(TripService, NoteService) {
     var ctrl = this;
 
 

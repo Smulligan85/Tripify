@@ -1,3 +1,6 @@
+(function() {
+  'use strict';
+
 function NoteService($http) {
 
   this.newNote = function(id, noteData) {
@@ -8,3 +11,4 @@ function NoteService($http) {
 angular
   .module('app')
   .service('NoteService', NoteService);
+}());

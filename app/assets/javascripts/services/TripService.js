@@ -1,3 +1,6 @@
+(function() {
+  'use strict';
+
 function TripService($http) {
 
   this.getTrips = function() {
@@ -24,3 +27,4 @@ function TripService($http) {
 angular
   .module('app')
   .service('TripService', TripService);
+}());
