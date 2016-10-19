@@ -14,13 +14,13 @@
   function IndividualTripController(TripService, NoteService) {
     var ctrl = this;
 
-
-    ctrl.readMode = true;
+    ctrl.listMode = true;
+    ctrl.readMode = false;
     ctrl.editMode = false;
     ctrl.noteMode = false;
     ctrl.editableTrip = ctrl.trip;
-    ctrl.startEditMode = startEditMode;
-    ctrl.closeEditMode = closeEditMode;
+    ctrl.toggleReadMode = toggleReadMode;
+    ctrl.toggleEditMode = toggleEditMode;
     ctrl.startNoteMode = startNoteMode;
     ctrl.closeNoteMode = closeNoteMode;
     ctrl.updateTrip = updateTrip;
@@ -28,14 +28,13 @@
     ctrl.destroyTrip = destroyTrip;
     ctrl.noteData = {};
 
-    function startEditMode() {
-      ctrl.readMode = false;
-      ctrl.editMode = true;
+    function toggleReadMode() {
+      ctrl.readMode = !ctrl.readMode;
     }
 
-    function closeEditMode() {
-      document.location.reload(true);
-      ctrl.editMode = false;
+    function toggleEditMode() {
+      ctrl.readMode = !ctrl.readMode;
+      ctrl.editMode = !ctrl.editMode;
     }
 
     function startNoteMode() {

@@ -1,9 +1,12 @@
+<div ng-if="$ctrl.listMode">
+  <button class="btn btn-link" ng-click="$ctrl.toggleReadMode()"> {{ $ctrl.trip.name }}</button>
+</div>
 <div ng-if="$ctrl.readMode">
     <div class="col-md-6">
       <h2>{{$ctrl.trip.name}}</h2>
       <p>Departing: {{ $ctrl.trip.depart_date | date: 'MM/dd/yyyy' }}</p>
       <p>Returning: {{ $ctrl.trip.return_date | date: 'MM/dd/yyyy' }}</p>
-      <button class="btn btn-primary" ng-click="$ctrl.startEditMode()">Edit Trip      </button>
+      <button class="btn btn-primary" ng-click="$ctrl.toggleEditMode()">Edit Trip      </button>
       <button class="btn btn-danger" ng-click="$ctrl.destroyTrip()">Delete Trip</button><br>
     </div>
     <div class="col-md-6">
@@ -40,7 +43,7 @@
 
 <div ng-if="$ctrl.editMode">
   <h2>Edit Your Trip</h2>
-  <button class="btn btn-danger" ng-click="$ctrl.closeEditMode()">Close Edit Form</button>
+  <button class="btn btn-danger" ng-click="$ctrl.toggleEditMode()">Close Edit Form</button>
   <form  name="form" novalidate ng-submit="$ctrl.updateTrip()">
     <div class="form-group">
     <label for="name">Name:</label>

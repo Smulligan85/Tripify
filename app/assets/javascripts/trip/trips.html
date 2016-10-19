@@ -6,9 +6,7 @@
   </tabs>
   <h2>Your Trips</h2>
   <h3>Trip Name</h3>
-  <tabs>
-    <pane ng-repeat="trip in vm.trips | orderBy:'name'" title="{{trip.name}}">
-    <individual-trip parent-controller="vm" trip="trip"></individual-trip>
-    </pane>
-  </tabs>
+    <div ng-repeat="trip in vm.trips | orderBy:'name'" title="{{trip.name}}">
+      <individual-trip parent-controller="vm" trip="trip"></individual-trip>
+    </div>
 </div>

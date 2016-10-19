@@ -7,7 +7,7 @@
     controller: NewTripController,
   };
 
-  function NewTripController($state, TripService) {
+  function NewTripController(TripService) {
     var ctrl = this;
     ctrl.postTrip = postTrip;
     ctrl.newMode = true;
