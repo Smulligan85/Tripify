@@ -48,9 +48,9 @@
 
     function updateTrip() {
       return TripService.editTrip(ctrl.editableTrip.id, ctrl.editableTrip)
-                 .success(function() {
-                   document.location.reload(true);
-                 });
+              .success(function() {
+                document.location.reload(true);
+              });
 
     }
 
@@ -65,9 +65,9 @@
 
     function destroyTrip() {
       return TripService.deleteTrip(ctrl.editableTrip.id)
-            .success(function() {
-              document.location.reload(true);
-            });
+              .success(function() {
+                document.location.reload(true);
+              });
     }
   }
   angular
