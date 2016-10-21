@@ -6,7 +6,8 @@
   </tabs>
   <h2>Your Trips</h2>
   <h3>Trip Name</h3>
-    <div ng-repeat="trip in vm.trips | orderBy:'name'" title="{{trip.name}}">
+  <button class="btn btn-danger" ng-click="vm.dateOrder()">Order by Date</button>
+    <div ng-repeat="trip in vm.trips" title="{{trip.name}}">
       <individual-trip parent-controller="vm" trip="trip"></individual-trip>
     </div>
 </div>
