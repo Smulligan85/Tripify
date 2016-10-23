@@ -12,16 +12,12 @@
     ctrl.postTrip = postTrip;
     ctrl.newMode = true;
     ctrl.closeNewForm = closeNewForm;
-
-    // function trips() {
-    //   return TripService.getTrips();
-    // }
+    dateValidator = dateValidator;
 
     function dateValidator() {
-      // var tripCollection = trips();
       TripService.getTrips().then(function(trip) {
         trip.data.forEach(function(trip) {
-          if (ctrl.trip.departDate >= trip.depart_date && ctrl.trip.depart_date <= trip.return_date || ctrl.trip.return_date >= trip.depart_date && ctrl.trip.return_date <= trip.return_date) {
+          if (ctrl.trip.depart_date.toDateString() >= trip.depart_date && ctrl.trip.depart_date.toDateString() <= trip.return_date || ctrl.trip.return_date.toDateString() >= trip.depart_date && ctrl.trip.return_date.toDateString() <= trip.return_date) {
             return true;
           }
       });
