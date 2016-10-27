@@ -13,13 +13,11 @@
     ctrl.newMode = true;
     ctrl.closeNewForm = closeNewForm;
     ctrl.runDateValidator = runDateValidator;
-    // dateValidator = dateValidator;
-    // postTrip = postTrip;
 
 
     function dateValidator() {
       return TripService.getTrips()
-                        .then(checkTrips)
+                        .then(checkTrips);
 
       function checkTrips(trips) {
         trips.data.forEach(function(trip) {
@@ -36,14 +34,14 @@
           if (ctrl.trip.depart_date >= dDate && ctrl.trip.depart_date <= rDate || ctrl.trip.return_date >= dDate && ctrl.trip.return_date <= rDate) {
             return true;
           }
-        })
+        });
       }
 
     }
 
     function runDateValidator() {
       if (dateValidator()) {
-        alert("date not valid");
+        alert("Trip date conflict");
       } else {
         postTrip();
       }
