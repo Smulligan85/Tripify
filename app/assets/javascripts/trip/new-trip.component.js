@@ -12,40 +12,6 @@
     ctrl.postTrip = postTrip;
     ctrl.newMode = true;
     ctrl.closeNewForm = closeNewForm;
-    ctrl.runDateValidator = runDateValidator;
-
-
-    function dateValidator() {
-      return TripService.getTrips()
-                        .then(checkTrips);
-
-      function checkTrips(trips) {
-        trips.data.forEach(function(trip) {
-          var dYear = trip.depart_date.split("-")[0];
-          var dMonth = trip.depart_date.split("-")[1] - 1;
-          var dDay = trip.depart_date.split("-")[2].slice(0, 2);
-          var dDate = new Date(dYear, dMonth, dDay);
-
-          var rYear = trip.return_date.split("-")[0];
-          var rMonth = trip.return_date.split("-")[1] - 1;
-          var rDay = trip.return_date.split("-")[2].slice(0, 2);
-          var rDate = new Date(rYear, rMonth, rDay);
-
-          if (ctrl.trip.depart_date >= dDate && ctrl.trip.depart_date <= rDate || ctrl.trip.return_date >= dDate && ctrl.trip.return_date <= rDate) {
-            return true;
-          }
-        });
-      }
-
-    }
-
-    function runDateValidator() {
-      if (dateValidator()) {
-        alert("Trip date conflict");
-      } else {
-        postTrip();
-      }
-    }
 
     function postTrip() {
          return TripService.newTrip(ctrl.trip)

@@ -3,7 +3,7 @@
   <h1 class="headers">New Trip Page</h1>
 
   <div class="container">
-  <form name="form" novalidate ng-submit="$ctrl.runDateValidator()">
+  <form name="form" novalidate ng-submit="$ctrl.postTrip()">
     <div class="form-group">
       <label for="name">Name:</label>
       <input class="form-control" type="text" name="tripName" placeholder="Enter Trip Name" ng-model="$ctrl.trip.name" required="required" ><br>
